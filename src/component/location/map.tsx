@@ -134,19 +134,24 @@ const NaverMap = () => {
 
       {/* 내비게이션 앱 연결 버튼 모음 */}
       <div className="navigation">
+        
         {/* 네이버 지도 연동 */}
         <button
           onClick={() => {
+            const webUrl = `https://map.naver.com/p/entry/place/${NMAP_PLACE_ID}`
+
             switch (checkDevice()) {
               case "ios":
               case "android":
-                window.open(`nmap://place?id=${NMAP_PLACE_ID}`, "_self")
+                window.location.href = `nmap://place?id=${NMAP_PLACE_ID}`
+
+                setTimeout(() => {
+                  window.location.href = webUrl
+                }, 1000)
                 break
+
               default:
-                window.open(
-                  `https://map.naver.com/p/entry/place/${NMAP_PLACE_ID}`,
-                  "_blank",
-                )
+                window.open(webUrl, "_blank")
                 break
             }
           }}
