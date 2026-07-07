@@ -63,25 +63,25 @@ export const Calendar = () => {
       {/* 달력 영역 */}
       <div className="calendar-wrapper">
         <div className="head holiday">
-          <span>Su</span>
+          <span>Sun</span>
         </div>
         <div className="head">
-          <span>Mo</span>
+          <span>Mon</span>
         </div>
         <div className="head">
-          <span>Tu</span>
+          <span>Tue</span>
         </div>
         <div className="head">
-          <span>We</span>
+          <span>Wed</span>
         </div>
         <div className="head">
-          <span>Th</span>
+          <span>Thu</span>
         </div>
         <div className="head">
-          <span>Fr</span>
+          <span>Fri</span>
         </div>
         <div className="head">
-          <span>Sa</span>
+          <span>Sat</span>
         </div>
 
         {/* 첫 주 빈 공간 채우기 */}
