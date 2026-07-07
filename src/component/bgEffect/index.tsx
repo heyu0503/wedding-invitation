@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react"
-import patelUrl from "../../icons/petal.png"
+import patelUrl from "../../icons/snow_petal.png"
 
 // 꽃잎의 이동 및 회전 속도 설정
 const X_SPEED = 0.6
@@ -40,7 +40,7 @@ class Petal {
    * 꽃잎의 크기, 투명도, 속도 등을 무작위로 초기화합니다.
    */
   initialize() {
-    this.w = 25 + Math.random() * 15
+    this.w = 20 + Math.random() * 10
     this.h = 20 + Math.random() * 10
     this.opacity = this.w / 80
     this.flip = Math.random()
