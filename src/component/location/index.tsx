@@ -7,7 +7,7 @@ import { LOCATION, LOCATION_ADDRESS } from "../../const"
 import { useState } from "react"
 import { Button } from "../button"
 import { Modal } from "../modal"
-import directionImage from "../../images/location/direction.jpg"
+import directionImage from "../../images/direction.jpg"
 
 /**
  * 오시는 길 정보를 표시하는 컴포넌트입니다.
