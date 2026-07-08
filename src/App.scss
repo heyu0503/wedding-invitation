@@ -211,3 +211,18 @@ h2 {
 div.break {
   height: 1rem;
 }
+
+/* 오시는 길 상세보기 모달 */
+.modal.direction-modal {
+  width: 70vw !important;
+  max-width: 70vw !important;
+  padding: 0.8rem !important;
+}
+
+.modal.direction-modal .direction-image {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  border: 5px solid red !important;
+}
