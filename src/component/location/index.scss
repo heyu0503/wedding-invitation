@@ -7,21 +7,6 @@
     }
   }
 
-  /* 오시는 길 자세히 보기 모달 */
-  .direction-modal {
-    padding: 0;
-    max-width: 500px;
-    width: 90vw;
-  }
-
-  .modal.direction-modal {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    border: 5px solid red;
-  }
-
   .map-wrapper {
     height: 20rem;
     position: relative;
