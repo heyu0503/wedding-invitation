@@ -81,15 +81,15 @@ export const Location = () => {
           alt="오시는 길 안내"
           className="direction-image"
         />
-        <Button
-          buttonStyle="style2"
-          className="bg-light-grey-color text-dark-color"
-          onClick={() => {
-            attendanceInfoModalState[1](false)
-          }}
-        >
-          닫기
-        </Button>
+        <div className="footer">
+          <Button
+            buttonStyle="style2"
+            className="bg-light-grey-color text-dark-color"
+            onClick={() => directionModalState[1](false)}
+          >
+            닫기
+          </Button>
+        </div>
       </Modal>
     </>
   )
