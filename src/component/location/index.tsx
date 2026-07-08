@@ -75,16 +75,20 @@ export const Location = () => {
         </Button>
       </LazyDiv>
 
-      <Modal modalState={directionModalState} className="direction-modal">
+      <Modal
+        modalState={directionModalState}
+        className="direction-modal"
+      >
         <img
           src={directionImage}
           alt="오시는 길 안내"
           className="direction-image"
         />
-        <div className="footer">
+
+        <div className="footer direction-footer">
           <Button
             buttonStyle="style2"
-            className="bg-light-grey-color text-dark-color"
+            className="direction-close-button bg-light-grey-color text-dark-color"
             onClick={() => directionModalState[1](false)}
           >
             닫기

@@ -214,12 +214,26 @@ div.break {
 
 /* 오시는 길 상세보기 모달 */
 .modal.direction-modal {
-  width: 75vw !important;
-  max-width: 75vw !important;
+  width: 22rem !important;
+  max-width: 80vw !important;
   padding: 0.8rem !important;
 }
 
 .modal.direction-modal .direction-image {
-  width: 80vw !important;
-  max-width: 80vw !important;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.modal.direction-modal .direction-footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 0.8rem;
+}
+
+.modal.direction-modal .direction-close-button {
+  width: 100%;
+  display: block;
 }
