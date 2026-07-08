@@ -15,7 +15,10 @@
   }
 
   .modal.direction-modal
-    width: 50%;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
     border: 5px solid red;
   }
 
