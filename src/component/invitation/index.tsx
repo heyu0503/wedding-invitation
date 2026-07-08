@@ -37,6 +37,10 @@ export const Invitation = () => {
         <div className="content">이제는 공식적으로</div>
         <div className="content">잔소리를 주고 받기로 했습니다.</div>
         <div className="break" />
+        <div className="content">친구 같고, 연인 같고,</div>
+        <div className="content">가족 같은 저희가</div>
+        <div className="content">평생을 함께하려 합니다.</div>
+        <div className="break" />
         <div className="content">저희의 역사적인 계약 체결식에</div>
         <div className="content">함께해 주세요.</div>
 
