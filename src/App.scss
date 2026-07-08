@@ -220,9 +220,6 @@ div.break {
 }
 
 .modal.direction-modal .direction-image {
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-  margin: 0 auto !important;
-  border: 5px solid red !important;
+  width: 60vw !important;
+  max-width: 60vw !important;
 }
