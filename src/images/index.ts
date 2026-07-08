@@ -11,8 +11,8 @@ import image9 from "./image9.png"
 import image10 from "./image10.png"
 import image11 from "./image11.png"
 import image12 from "./image12.png"
-import image12 from "./image13.png"
-import image12 from "./image14.png"
+import image13 from "./image13.png"
+import image14 from "./image14.png"
 
 /**
  * 메인 커버 이미지
