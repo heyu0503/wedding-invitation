@@ -4,6 +4,11 @@ import BusIcon from "../../icons/bus-icon.svg?react"
 import { LazyDiv } from "../lazyDiv"
 import { LOCATION, LOCATION_ADDRESS } from "../../const"
 
+import { useState } from "react"
+import { Button } from "../button"
+import { Modal } from "../modal"
+import directionImage from "../../images/location/direction.png"
+
 /**
  * 오시는 길 정보를 표시하는 컴포넌트입니다.
  * 지도와 대중교통, 자가용 이용 방법을 안내합니다.
@@ -11,6 +16,8 @@ import { LOCATION, LOCATION_ADDRESS } from "../../const"
  * @returns {JSX.Element} 오시는 길 섹션
  */
 export const Location = () => {
+  const directionModalState = useState(false)
+
   return (
     <>
       {/* 지도 및 주소 섹션 */}
@@ -35,26 +42,8 @@ export const Location = () => {
           <div className="content">
             <b>* 수원역</b>
             <br />
-            4번출구 앞 10, 10-2, 10-5, 11-1, 13-4, 15-1, 37, 83-1, 720-2 탑승
-            <br /> → 수원고용복지플러스센터, 동수원병원 라마다호텔 하차 (도보 3분)
-          </div>
-          <div />
-            <b>* 수원 시청역</b>
-            <br />
-            1번출구 82-1 탑승
-            <br /> → 우만상사 아파트 하차 (도보 1분)
-          <div />
-          <div className="content">
-            * 버스 이용 시
-            <br />
-            - 간선(파랑): 461, 641
-            <br />
-            - 지선(초록): 5413, 5524, 5528
-            <br />
-            반드시 <b>낙성대입구</b> 하차
-            <br />→ 마을버스 <b>관악 02번</b> 이용
-            <br />
-            이하 위와 동일합니다.
+            4번출구 앞 720-2, 83-1, 10, 10-2, 10-5, 11-1, 37, 66-4, 13-4 탑승
+            <br /> → 수원고용센터, 동수원병원, 라마다호텔 앞 하차 (도보 5분)
           </div>
         </div>
 
@@ -68,21 +57,30 @@ export const Location = () => {
           <div className="content">
             네이버 지도, 카카오 네비, 티맵 등 이용
             <br />
-            <b>서울대학교 연구공원 웨딩홀</b> 검색
+            <b>수원 더 아리엘 웨딩홀</b> 검색
             <br />
-            - 주차 요금은 무료입니다.
+            - 건물 내 지하 1, 2층 주차장, 주차 타워 주차장 이용
+            - 주차 2시간 무료
             <br />
-            (주차장 이용 시 웨딩홀과 바로 연결)
-          </div>
-          <div />
-          <div className="content">
-            <b>
-              ※ 서울대학교 정, 후문을 통과할 경우 통행료가 발생하므로
-              유의바랍니다. 낙성대 방향으로 이용해주세요.
-            </b>
-          </div>
+            (외부 주차장 이용 : 주차원 안내받고 다른 주차장으로 이동)
+          </div>          
         </div>
+        <Button
+          onClick={() => {
+            directionModalState[1](true)
+          }}
+        >
+          오시는 길 자세히 보기
+        </Button>
       </LazyDiv>
+
+      <Modal modalState={directionModalState} className="direction-modal">
+        <img
+          src={directionImage}
+          alt="오시는 길 안내"
+          className="direction-image"
+        />
+      </Modal>
     </>
   )
 }
