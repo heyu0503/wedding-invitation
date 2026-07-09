@@ -163,22 +163,31 @@ const NaverMap = () => {
         {/* 카카오 내비 연동 */}
         <button
           onClick={() => {
+            const webUrl = `https://map.kakao.com/link/map/${KMAP_PLACE_ID}`
+
             switch (checkDevice()) {
               case "ios":
               case "android":
-                if (kakao)
+                if (!kakao || !kakao.isInitialized()) {
+                  window.open(webUrl, "_blank")
+                  return
+                }
+
+                try {
                   kakao.Navi.start({
                     name: LOCATION,
                     x: WEDDING_HALL_POSITION[0],
                     y: WEDDING_HALL_POSITION[1],
                     coordType: "wgs84",
                   })
+                } catch (error) {
+                  console.error("Kakao Navi error:", error)
+                  window.open(webUrl, "_blank")
+                }
                 break
+
               default:
-                window.open(
-                  `https://map.kakao.com/link/map/${KMAP_PLACE_ID}`,
-                  "_blank",
-                )
+                window.open(webUrl, "_blank")
                 break
             }
           }}
@@ -198,9 +207,20 @@ const NaverMap = () => {
                   goaly: WEDDING_HALL_POSITION[1].toString(),
                   goalName: LOCATION,
                 })
-                window.open(`tmap://route?${params.toString()}`, "_self")
+
+                window.location.href = `tmap://route?${params.toString()}`
+
+                const start = Date.now()
+
+                setTimeout(() => {
+                  if (Date.now() - start < 2000) {
+                    alert("티맵 앱이 설치되어 있지 않습니다.\n앱을 설치한 후 다시 이용해주세요.")
+                  }
+                }, 1500)
+
                 break
               }
+
               default: {
                 alert("모바일에서 확인하실 수 있습니다.")
                 break
