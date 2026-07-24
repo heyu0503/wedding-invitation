@@ -31,31 +31,32 @@ export const ShareButton = () => {
           }
 
           // 카카오톡 공유 전송 (위치 기반 템플릿 사용)
-const shareUrl =
-  window.location.origin + import.meta.env.BASE_URL
+          const shareUrl =
+            window.location.origin + import.meta.env.BASE_URL
 
-kakao.Share.sendDefault({
-  objectType: "feed",
-  content: {
-    title: `${GROOM_FULLNAME} ❤️ ${BRIDE_FULLNAME}의 결혼식에 초대합니다.`,
-    description:
-      WEDDING_DATE.format(WEDDING_DATE_FORMAT) + "\n" + LOCATION,
-    imageUrl: shareUrl + "preview_image_v2.png",
-    link: {
-      mobileWebUrl: shareUrl,
-      webUrl: shareUrl,
-    },
-  },
-  buttons: [
-    {
-      title: "모바일 청첩장 보기",
-      link: {
-        mobileWebUrl: shareUrl,
-        webUrl: shareUrl,
-      },
-    },
-  ],
-})
+          kakao.Share.sendDefault({
+            objectType: "feed",
+            content: {
+              title: `${GROOM_FULLNAME} ❤️ ${BRIDE_FULLNAME}의 결혼식에 초대합니다.`,
+              description:
+                WEDDING_DATE.format(WEDDING_DATE_FORMAT) + "\n" + LOCATION,
+              imageUrl: shareUrl + "preview_image_v2.png",
+              link: {
+                mobileWebUrl: shareUrl,
+                webUrl: shareUrl,
+              },
+            },
+            buttons: [
+              {
+                title: "모바일 청첩장 보기",
+                link: {
+                  mobileWebUrl: shareUrl,
+                  webUrl: shareUrl,
+                },
+              },
+            ],
+          })
+        }}
       >
         <img src={ktalkIcon} alt="ktalk-icon" /> 카카오톡으로 공유하기
       </button>
