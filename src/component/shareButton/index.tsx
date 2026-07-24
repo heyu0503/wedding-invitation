@@ -31,8 +31,9 @@ export const ShareButton = () => {
           }
 
           // 카카오톡 공유 전송 (위치 기반 템플릿 사용)
-          const shareUrl =
-            window.location.origin + import.meta.env.BASE_URL
+          const shareUrl = "https://heyu0503.github.io/wedding-invitation/"
+          const imageUrl =
+            "https://heyu0503.github.io/wedding-invitation/preview_image_v2.png"
 
           kakao.Share.sendDefault({
             objectType: "feed",
@@ -40,7 +41,9 @@ export const ShareButton = () => {
               title: `${GROOM_FULLNAME} ❤️ ${BRIDE_FULLNAME}의 결혼식에 초대합니다.`,
               description:
                 WEDDING_DATE.format(WEDDING_DATE_FORMAT) + "\n" + LOCATION,
-              imageUrl: shareUrl + "preview_image_v2.png",
+              imageUrl: imageUrl,
+              imageWidth: 800,
+              imageHeight: 800,
               link: {
                 mobileWebUrl: shareUrl,
                 webUrl: shareUrl,
