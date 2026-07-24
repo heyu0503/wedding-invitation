@@ -30,8 +30,9 @@ export const ShareButton = () => {
             return
           }
 
-          // 카카오톡 공유 전송
-const shareUrl = window.location.origin + baseUrl
+          // 카카오톡 공유 전송 (위치 기반 템플릿 사용)
+const shareUrl =
+  window.location.origin + import.meta.env.BASE_URL
 
 kakao.Share.sendDefault({
   objectType: "feed",
@@ -55,7 +56,6 @@ kakao.Share.sendDefault({
     },
   ],
 })
-        }}
       >
         <img src={ktalkIcon} alt="ktalk-icon" /> 카카오톡으로 공유하기
       </button>
